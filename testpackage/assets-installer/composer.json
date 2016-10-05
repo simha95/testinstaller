@@ -1,0 +1,15 @@
+{
+	"name": "assets-installer",
+	"description": "Web Asset Installer",
+	"type": "composer-plugin",
+	"version": "1.0.2",
+	"require": {
+		"composer-plugin-api": "*"
+	},
+	"autoload": {
+		"psr-0": {"mlemos\\Composer": [""]}
+	},
+	"extra": {
+		"class": "mlemos\\Composer\\AssetsInstallerPlugin"
+	}
+}
