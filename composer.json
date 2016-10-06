@@ -1,6 +1,7 @@
 {
     "name": "simha95/testinstaller",
     "description": "Web Asset Test Installer",
+    "type":"composer-plugin",
     "require": {
         "composer-plugin-api": "*"
     },
