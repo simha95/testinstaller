@@ -77,27 +77,51 @@ class AssetsInstaller extends \Composer\Installer\LibraryInstaller
 		{
 			if(IsSet($action['js-target']))
 			{
-				if(!IsSet($action['type']))
-					$action['type'] = 'copy';
 				$action['target'] = $action['js-target'];
+                if(IsSet($action['js-source']))
+                    $action['source'] = $action['js-source'];
+                else
+                    $action['source'] = $action['js-target'];
+                if(!IsSet($action['type']))
+					$action['type'] = 'copy';
 				if(!IsSet($action['pattern']))
 					$action['pattern'] = '\\.js$';
 			}
 			elseif(IsSet($action['css-target']))
 			{
+                $action['target'] = $action['css-target'];
+                if(IsSet($action['css-source']))
+                    $action['source'] = $action['css-source'];
+                else
+                    $action['source'] = $action['css-target'];
 				if(!IsSet($action['type']))
 					$action['type'] = 'copy';
-				$action['target'] = $action['css-target'];
 				if(!IsSet($action['pattern']))
 					$action['pattern'] = '\\.css$';
 			}
 			elseif(IsSet($action['image-target']))
 			{
+                $action['target'] = $action['image-target'];
+                if(IsSet($action['image-source']))
+                    $action['source'] = $action['image-source'];
+                else
+                    $action['source'] = $action['image-target'];
 				if(!IsSet($action['type']))
 					$action['type'] = 'copy';
-				$action['target'] = $action['image-target'];
 				if(!IsSet($action['pattern']))
-					$action['pattern'] = '((jpg)|(png)|(gif))$';
+					$action['pattern'] = '((jpg)|(jpeg)|(png)|(gif)|(ico))$';
+			}
+            elseif(IsSet($action['font-target']))
+			{
+                $action['target'] = $action['font-target'];
+                if(IsSet($action['font-source']))
+                    $action['source'] = $action['font-source'];
+                else
+                    $action['source'] = $action['font-target'];
+				if(!IsSet($action['type']))
+					$action['type'] = 'copy';
+				if(!IsSet($action['pattern']))
+					$action['pattern'] = '((eot)|(otf)|(svg)|(ttf)|(woff)|(woff2))$';
 			}
 			if(!IsSet($action['type']))
 				throw new \InvalidArgumentException('it was not specified the type of installation action for the package '.$package->getName());
