@@ -1,4 +1,15 @@
 {
-    "name": "simha95/testinstaller",
-    "description": "Web Asset Test Installer"
+    "name": "testinstaller",
+    "description": "Web Asset Test Installer",
+    "require": {
+        "composer-plugin-api": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "mlemos\\Composer": [""]
+        }
+    },
+    "extra": {
+        "class": "mlemos\\Composer\\AssetsInstallerPlugin"
+    }
 }
