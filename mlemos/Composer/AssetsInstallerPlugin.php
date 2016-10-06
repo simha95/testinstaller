@@ -27,7 +27,7 @@ class AssetsInstallerPlugin implements PluginInterface, EventSubscriberInterface
 		$this->io = $io;
 		$installer = new AssetsInstaller($io, $composer);
 		$package = $composer->getPackage();
-		$extra = $package->getExtra();
+		$extra = $package->getExtra()
 		if(IsSet($extra['assets']))
 			$installer->setAssets($extra['assets']);
 		$composer->getInstallationManager()->addInstaller($installer);
