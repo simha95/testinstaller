@@ -2,7 +2,7 @@
 /*
  * AssetsInstaller.php
  *
- * @(#) $Id: AssetsInstaller.php,v 1.3 2014/01/07 10:14:45 mlemos Exp $
+ * @(#) $Id: AssetsInstaller.php,v 1.3 2016/01/07 10:14:45 mlemos Exp $
  *
  */
  
